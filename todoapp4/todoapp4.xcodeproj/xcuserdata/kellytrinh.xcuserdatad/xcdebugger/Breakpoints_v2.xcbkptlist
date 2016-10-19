@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChangeTaskViewController.swift"
+            timestampString = "498560774.024316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "todoapp4/ViewController.swift"
+            timestampString = "498559379.2576"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "todoapp4/ViewController.swift"
+            timestampString = "498560031.892742"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "todoapp4.ViewController.tasks.getter : Swift.Array&lt;todoapp4.Task&gt;"
+                  moduleName = "todoapp4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kellytrinh/Google%20Drive/fall_2016/iosdecal/ios-decal-proj1/todoapp4/todoapp4/ViewController.swift"
+                  timestampString = "498560032.305862"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "todoapp4.ViewController.tasks.setter : Swift.Array&lt;todoapp4.Task&gt;"
+                  moduleName = "todoapp4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kellytrinh/Google%20Drive/fall_2016/iosdecal/ios-decal-proj1/todoapp4/todoapp4/ViewController.swift"
+                  timestampString = "498560032.307525"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "todoapp4.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; todoapp4.ViewController"
+                  moduleName = "todoapp4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kellytrinh/Google%20Drive/fall_2016/iosdecal/ios-decal-proj1/todoapp4/todoapp4/ViewController.swift"
+                  timestampString = "498560032.309607"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "todoapp4.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;todoapp4.ViewController&gt;"
+                  moduleName = "todoapp4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kellytrinh/Google%20Drive/fall_2016/iosdecal/ios-decal-proj1/todoapp4/todoapp4/ViewController.swift"
+                  timestampString = "498560032.311584"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "138">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
