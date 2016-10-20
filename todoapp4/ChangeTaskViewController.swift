@@ -13,8 +13,12 @@ class ChangeTaskViewController: UIViewController {
 
     @IBOutlet weak var inputTaskField: UITextField!
     
+    var task : Task?
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem?.title = "Back"
+        navigationItem.title = "Add Task"
+
 
         // Do any additional setup after loading the view.
     }
@@ -26,11 +30,10 @@ class ChangeTaskViewController: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nav = segue.destination as! UINavigationController
-        let tvc = nav.topViewController as! ViewController
-        tvc.task = Task(taskName: inputTaskField.text!, dateCreated: Date() as NSDate, taskStatus: Task.Status(rawValue: "Incomplete")!)
-//        tvc.tasks.append(Task(taskName: inputTaskField.text!, dateCreated: Date() as NSDate, taskStatus: Task.Status(rawValue: "Incomplete")!))
-//    }
+        
+        self.task = Task(taskName: inputTaskField.text!, dateCreated: Date() as NSDate, taskStatus: Task.Status(rawValue: "Incomplete")!)
+    
+    }
     
     /*
     // MARK: - Navigation
@@ -42,4 +45,5 @@ class ChangeTaskViewController: UIViewController {
     }
     */
 
+//}
 }

@@ -10,26 +10,43 @@ import UIKit
 
 class ViewController: UIViewController {
     var task : Task?
-    var tasks : [Task] = [Task(taskName: "hello", dateCreated: NSDate(), taskStatus: Task.Status(rawValue: "Incomplete")!)]
-    
+    var tasks = [Task]()
     @IBOutlet weak var tableView: UITableView!
     
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
-            
-            if task != nil {
-                tasks.append(task!)
-            }
-            
             navigationItem.title = "ToDo"
             let tableView = UITableView(frame: view.bounds)
             view.addSubview(tableView)
             self.tableView = tableView
             
+            
             tableView.dataSource = self
             tableView.delegate = self
+            
+            self.edgesForExtendedLayout = UIRectEdge.top
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        navigationItem.title = "Back"
+    }
+    
+    @IBAction func unwindToViewController(sender: UIStoryboardSegue)
+    {
+        let sourceViewController = sender.source as! ChangeTaskViewController
+        if sourceViewController.task != nil {
+                print(sourceViewController.task?.taskName)
+                print(tasks)
+                tasks.append(sourceViewController.task!)
+                print(tasks)
+            }
+        self.tableView.reloadData()
+        
+        }
+    
+    
+        // Pull any data from the view controller which initiated the unwind segue.
     }
     
     extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -55,6 +72,7 @@ class ViewController: UIViewController {
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: false)
         }
+        
 }
 
 
