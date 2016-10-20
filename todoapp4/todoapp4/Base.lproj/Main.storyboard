@@ -6,45 +6,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="todoapp4" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVV-iC-Bly">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="YVV-iC-Bly" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FPg-tI-E6A"/>
-                            <constraint firstItem="YVV-iC-Bly" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IhX-D2-0vO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YVV-iC-Bly" secondAttribute="bottom" id="Qrz-0O-R7K"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YVV-iC-Bly" secondAttribute="bottom" id="chs-e8-Owl"/>
-                            <constraint firstItem="YVV-iC-Bly" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="93" id="dUb-9E-JYj"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="j3G-pt-zOL">
-                        <barButtonItem key="leftBarButtonItem" title="Add Task" id="1My-iv-cy5"/>
-                        <connections>
-                            <outlet property="leftBarButtonItem" destination="1My-iv-cy5" id="Tv1-m5-62Z"/>
-                        </connections>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="YVV-iC-Bly" id="Sez-um-oGF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="433" y="1264"/>
-        </scene>
         <!--Table View Controller-->
         <scene sceneID="d3P-Fe-TQ5">
             <objects>
@@ -121,14 +82,6 @@
                                 <state key="normal" title="Add Task"/>
                                 <connections>
                                     <segue destination="W9r-ek-u9E" kind="unwind" unwindAction="unwindToTableViewControllerWithSegue:" id="2IE-ff-OGy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFx-cf-inq">
-                                <frame key="frameInset" minX="164" minY="290" width="46" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="W9r-ek-u9E" kind="unwind" unwindAction="unwindTestWithSegue:" id="GH7-ZS-7la"/>
                                 </connections>
                             </button>
                         </subviews>
