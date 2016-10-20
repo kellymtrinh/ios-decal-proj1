@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ceS-RC-18v" id="vXQ-sT-3r8">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -35,11 +35,48 @@
                                 <segue destination="NjX-V3-zNR" kind="show" id="tKS-Dg-wqj"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Daily Stats" id="acF-xA-2zQ">
+                            <connections>
+                                <segue destination="53e-bh-XLy" kind="show" identifier="toDailyStats" id="yjo-yf-hMT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gR-TS-zlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="635" y="-207"/>
+        </scene>
+        <!--Daily Stats View Controller-->
+        <scene sceneID="74i-pk-BX1">
+            <objects>
+                <viewController id="53e-bh-XLy" userLabel="Daily Stats View Controller" customClass="DailyStatsViewController" customModule="todoapp4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kzr-oK-ScS"/>
+                        <viewControllerLayoutGuide type="bottom" id="GbC-ji-4DA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8aM-OY-Wb3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBs-Bo-Tv7">
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aBs-Bo-Tv7" firstAttribute="centerX" secondItem="8aM-OY-Wb3" secondAttribute="centerX" constant="15.5" id="5FG-l0-Onn"/>
+                            <constraint firstItem="aBs-Bo-Tv7" firstAttribute="top" secondItem="kzr-oK-ScS" secondAttribute="bottom" constant="10" id="ZLA-uk-4gp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="numTasksCompleted" destination="aBs-Bo-Tv7" id="Lt9-qe-S4a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NPG-pd-HVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1325.5999999999999" y="-160.56971514242881"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7dc-5k-GP6">

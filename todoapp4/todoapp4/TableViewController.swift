@@ -11,9 +11,16 @@ import UIKit
 class TableViewController: UITableViewController {
     var task : Task?
     var tasks = [Task]()
+    let hourInSeconds = 3600 //3600 seconds in an hour
+    
+    @IBOutlet weak var toggl: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        var timer = Timer.scheduledTimer(timeInterval: TimeInterval(hourInSeconds), target: self, selector: #selector(self.deleteOldTasks), userInfo: nil, repeats: true);
+        //check every hour if any tasks are over a day old
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -21,8 +28,7 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -32,20 +38,34 @@ class TableViewController: UITableViewController {
     {
         let sourceViewController = segue.source as! ChangeTaskViewController
         if sourceViewController.task != nil {
-            print(sourceViewController.task?.taskName)
-            print(tasks)
             tasks.append(sourceViewController.task!)
-            print(tasks)
+            deleteOldTasks()
         }
         self.tableView.reloadData()
-        
     }
     
-    @IBAction func unwindTest(segue: UIStoryboardSegue) {
-        print("Unwind test true")
+    func deleteOldTasks() {
+        let dayInSeconds: Double = 86400 //delete tasks older than a day 86400 seconds
+        var toRemove = [Int]()
+        for (index, _) in tasks.enumerated() {
+            if (tasks[index].taskStatus == Task.Status.Complete && (tasks[index].dateCompleted.timeIntervalSinceNow.rounded() <= dayInSeconds)) {
+                toRemove.append(index)
+            }
+        }
+        for index in toRemove {
+            tasks.remove(at: index)
+        }
+        self.tableView.reloadData()
     }
     
-    // MARK: - Table view data source
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDailyStats" {
+            let dailyStatsVC = segue.destination as! DailyStatsViewController
+            dailyStatsVC.tasks = tasks
+        }
+    }
+    
+        // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -75,6 +95,9 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rowClicked = indexPath.row
+        tasks[rowClicked].toggleStatus()
+        self.tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: false)
     }
 

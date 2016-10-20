@@ -15,5 +15,19 @@ struct Task {
     
     let taskName: String
     let dateCreated: NSDate
-    let taskStatus: Status
+    var taskStatus: Status
+    var dateCompleted: NSDate
+    
+    mutating func toggleStatus() {
+        if taskStatus == Status.Complete {
+            taskStatus = Status.Incomplete
+            dateCompleted = NSDate()
+        }
+        
+        else if taskStatus == Status.Incomplete {
+            taskStatus = Status.Complete
+            dateCompleted = NSDate()
+        }
+        
+    }
 }
