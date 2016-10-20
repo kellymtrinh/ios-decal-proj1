@@ -13,8 +13,6 @@ class TableViewController: UITableViewController {
     var tasks = [Task]()
     let hourInSeconds = 3600 //3600 seconds in an hour
     
-    @IBOutlet weak var toggl: UISwitch!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +46,7 @@ class TableViewController: UITableViewController {
         let dayInSeconds: Double = 86400 //delete tasks older than a day 86400 seconds
         var toRemove = [Int]()
         for (index, _) in tasks.enumerated() {
-            if (tasks[index].taskStatus == Task.Status.Complete && (tasks[index].dateCompleted.timeIntervalSinceNow.rounded() <= dayInSeconds)) {
+            if (tasks[index].taskStatus == Task.Status.Complete && (tasks[index].dateCompleted.timeIntervalSinceNow.rounded() >= dayInSeconds)) {
                 toRemove.append(index)
             }
         }
@@ -91,6 +89,8 @@ class TableViewController: UITableViewController {
         cell.detailTextLabel?.text = oneTask.taskStatus.rawValue
         
         // Returning the cell
+        
+
         return cell
     }
     
